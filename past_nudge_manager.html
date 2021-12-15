@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"></html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+  </head>
+
+<body>
+<center>
+<table class="main">
+    <tr>
+        <td align="center" valign="top">
+            <center>
+                <container style="border: 1px solid #bcb5b9;" align="center">
+                    <wrapper class="header">
+                    <spacer size="38"></spacer>
+                        <row class="collapse" align="center" style="width:92%;">
+                            <columns small="4" large="6">
+                                <a href="https://aviso.com" rel="noreferrer" target="_blank">
+                                    <img src="https://aviso-email-images.s3.amazonaws.com/aviso_logos/aviso_red.png" class="header__image"/>
+                                </a>
+                            </columns>
+                            <columns small="8" large="6">
+                                <p class="text-right font" style="color:#ffffff;font-size:22px;font-weight:600;margin-bottom:0px !important;padding-bottom:0px !important;">
+                                    Deal Health
+                                </p>
+                                <p class="text-right font" style="color:#ffffff;font-size:16px;margin-bottom:0px !important;padding-bottom:0px !important;">
+                                    {{{{raw}}}} {{as_of_date}} {{{{/raw}}}}
+                                </p>
+                            </columns>
+                        </row>
+                    <spacer size="22"></spacer>
+                    </wrapper>
+                    <wrapper class="email_body" style="padding:0px !important;">
+                        <spacer size="32"></spacer>
+                        <row class="collapse" align="center" style="width:92%;">
+                            <columns style="padding: 0px!important;margin:0px !important;">
+                            <p class="text-left font" style="font-size:22px;font-weight:bold;margin:0px !important;padding:0px !important;">Hi {{{{raw}}}}{{user_name}}{{{{/raw}}}} <img src="https://aviso-email-images.s3.amazonaws.com/waving-hand_1f44b.png" alt="Waving Hand" height="22"  style="width: 22px !important; display: inline;" /></p></p> 
+                            <spacer size="8.1"></spacer>
+                            <p class="text-left font" style="font-size:16px;font-weight:400;margin:0px !important;padding:0px !important;"> Aviso AI found{{{{raw}}}}{{no_of_deals}}{{{{/raw}}}} deals that need to be reviewed</p>
+                            </columns>
+                        </row>
+                        <spacer size="24.1"></spacer>
+                        <row class="collapse" align="center" style="width:92%;background:#ffffff;" >
+                            <columns style="padding-bottom: 0px!important;">
+                                        <div class="text-center font" style="background:#dff5ff;margin:24px;padding:8px;margin-bottom:0px;color:#6f7288;">
+                                            The opportunities below have close dates in the past. Aviso recommends to <span style="font-weight:bold;color:#0991cc"> either update the close date for open deals or mark them as closed if they have already closed. </span> 
+                                        </div>
+                                        <spacer size="24.1"></spacer>
+                                        {% for item in deals %}
+                                        <row class="collapse" align="center" style="width:91%;padding-bottom:0px !important;margin-bottom:0px !important;">
+                                           
+                                            <columns small="3" large="2" style="padding-bottom:0px !important;">
+                                                <center>
+                                                <img
+                                                  src="https://aviso-email-images.s3.amazonaws.com/win_scores/{{{{raw}}}}{{item.aviso_score}}{{{{/raw}}}}.png"
+                                                    alt="Aviso Win Score"
+                                                />
+                                                </center>
+                                            </columns>
+                                            <columns small="9" large="10" style="padding-bottom:0px !important;">
+                                                <p class="text-left deal"><a href="{{{{raw}}}} {{item.deal_link}}{{{{/raw}}}}" style="font-weight:600;">{{{{raw}}}} {{item.deal_name}}{{{{/raw}}}}</a></p>
+                                                <row class="collapse" style="padding-bottom:0px !important;">
+                                                    <columns small="6" large="6" style="padding-bottom:0px !important;">
+                                                        <p class="text-left data ">Owner: <span style="font-weight: 600;">{{{{raw}}}} {{item.deal_owner}}{{{{/raw}}}}</span></p>
+                                                        <p class="text-left data ">Amount: <span style="font-weight: 600;">{{{{raw}}}} {{item.amount}}{{{{/raw}}}}</span></p>
+                                                    </columns>
+                                                    <columns small="6" large="6" style="padding-bottom:0px !important;">
+                                                        <p class="text-left data">Close date: <span style="font-weight: 600;">{{{{raw}}}} {{item.close_date}}{{{{/raw}}}}</span></p>
+                                                        <p class="text-left data ">Stage: <span style="font-weight: 600;">{{{{raw}}}} {{item.stage}}{{{{/raw}}}}</span></p>
+                                                    </columns>
+                                                </row>
+                                               
+                                                
+                                                
+                                                
+                                            </columns>
+                                        </row>
+                                        <row>
+                                            <columns  style="padding-bottom:0px !important;">
+                                                <spacer size="16"></spacer>
+                                                <div style="border-bottom: 1px solid #C7CBD6;width:95%;margin:auto;"></div>
+                                                <spacer size="16"></spacer>
+                                            </columns>
+                                        </row>
+                                        {% endfor %}
+                                        <spacer size="21"></spacer>
+                                        <row class="collapse" align="center" style="padding-bottom:0px !important;margin-bottom:0px !important;">
+                                            <column style="padding-bottom:0px !important;border:0px !important;">
+                                                <center>
+                                                    <div><!--[if mso]>
+                                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:36px;v-text-anchor:middle;width:132px;" arcsize="12%" stroke="f" fillcolor="#3d4b89">
+                                                          <w:anchorlock/>
+                                                          <center>
+                                                        <![endif]-->
+                                                            <a href="{{{{raw}}}} {{link}}{{{{/raw}}}}" class="font"
+                                                      style="background-color:#3d4b89;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:36px;text-align:center;text-decoration:none;width:132px;-webkit-text-size-adjust:none;">View Deals</a>
+                                                        <!--[if mso]>
+                                                          </center>
+                                                        </v:roundrect>
+                                                      <![endif]--></div>
+                                                       
+                                                </center>
+                                            </column>
+                                        </row>
+                                        <spacer size="27"></spacer>
+                            </columns>
+                        </row>
+                        <spacer size="40.1"></spacer>
+                        <row class="collapse date" align="center" style="width:48%;">
+                            <columns small="12" style="padding:0px !important;">
+                            <p class="text-center font" style="font-size:14px;font-weight:600;margin:0px !important;padding:0px !important;">Stay up-to-date with your deals on <br> iOS/Android  with Aviso Go. </p>
+                            </columns>
+                        </row>
+                        <spacer size="18.1"></spacer>
+                        <row class="collapse image" align="center" style="width:52%;">
+                            <columns  small="6" large="2" style="padding:0px !important;">
+                                <a href="https://apps.apple.com/us/app/avisogo/id1250216779">
+                                    <center>
+                                        <img src="https://aviso-email-images.s3.amazonaws.com/aviso_logos/Apple-AppStore_download.png"
+                                        alt="Apps Store" class="float-center"/>
+                                    </center>
+                                </a>
+                            </columns>
+                            <columns small="6" large="2" style="padding:0px !important;">
+                                <a href="https://play.google.com/store/apps/details?id=com.aviso.avisogo">
+                                    <center>
+                                        <img src="https://aviso-email-images.s3.amazonaws.com/aviso_logos/Android-AppStore_download.png"
+                                        alt="Play Store" class="float-center"/>
+                                    </center>
+                                </a>
+                            </columns>
+                        </row>
+                        <spacer size="22.1"></spacer>
+                        <row class="collapse date" align="center" style="width:48%;">
+                            <columns small="12" style="padding:0px !important;">
+                                <p class="text-center data font">Is this email
+                                    useful? We'd love your <a href="mailto:support@aviso.com?subject=Feedback%20on%20{{nudge_name}}"
+                                        style="text-decoration: underline; color:#1f9ef4;">feedback</a>!</p>
+                            </columns>
+                        </row>
+                        <spacer size="39.1"></spacer>
+                        <row class="collapse" style="width:90%" align="center">
+                            <column>
+                                <center>
+                                    <div style="border-bottom: 1px solid #C7CBD6;width:95%;"></div>
+                                </center>
+                                
+                                </div>
+                            </column>
+                        </row>
+                        <spacer size="26"></spacer>
+                        <row  class="collapse" align="center" style="width:85%">
+                            <columns small="0" large="3"  style="padding:0px !important;margin:0px!important;">
+                                <img src="https://aviso-email-images.s3.amazonaws.com/aviso_logos/logo_footer_red.png" alt="Aviso Icon" />
+                               
+                            </columns>
+                            <columns small="12" large="9"  style="padding:0px !important;margin:0px!important;vertical-align: bottom;">
+                                <spacer size="12"></spacer>
+                                <p class="data font text-right">Copyright &copy; 2021 Aviso Inc. All rights reserved.</p>
+                            </columns>
+                        </row>
+                        <spacer size="41"></spacer>
+                        <img src="{{{{raw}}}}{{opens_tracker}}{{{{/raw}}}}" style="width: 1px; height: 1px">
+                    </wrapper>
+                </container>
+            </center>
+        </td>
+    </tr>
+</table>
+</center>
+</body>
+</html>
